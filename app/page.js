@@ -1,13 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { UserButton } from "@stackframe/stack";
-import Image from "next/image";
+import AppHeader from "./(main)/_components/AppHeader";
+import HeroSection from "./(main)/_components/HeroSection";
+
 
 export default function Home() {
   return (
     <div>
-      <h2>Hello</h2>
-    <Button>Subscribe</Button>
-    <UserButton/>
+      <AppHeader />
+      <HeroSection />
     </div>
   );
 }

@@ -30,3 +30,21 @@ export const ConvertTextToSpeech = async (text, expertName) => {
 
   return URL.createObjectURL(blob);
 };
+
+export const AIModelToGenerateFeedbackAndNotes = async (coachingOption, conversation) => {
+  const res = await fetch("/api/aiFeedbackAndNotes", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      coachingOption,
+      conversation,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error("AI rate limited");
+  }
+
+  const data = await res.json();
+  return data.reply;
+};

@@ -2,23 +2,22 @@ import { v } from "convex/values";
 import { mutation } from "./_generated/server";
 
 export const CreateUser = mutation({
-    args:{
-        name:v.string(),
-        email:v.string(),
+    args: {
+        name: v.string(),
+        email: v.string(),
     },
-    handler: async(ctx, args) => {
+    handler: async (ctx, args) => {
         //if user already exist
-        const userData = await ctx.db.query('users').filter(q => q.eq(q.field('email'),args.email))
-        .collect();
+        const userData = await ctx.db.query('users').filter(q => q.eq(q.field('email'), args.email))
+            .collect();
         //if not Then add new user
-        if(userData?.length==0)
-        {
-            const data={
-                name:args.name,
-                email:args.email,
-                credits:50000
+        if (userData?.length == 0) {
+            const data = {
+                name: args.name,
+                email: args.email,
+                credits: 5000
             }
-            const result = await ctx.db.insert('users',{
+            const result = await ctx.db.insert('users', {
                 ...data
             });
             console.log(result);
@@ -27,3 +26,27 @@ export const CreateUser = mutation({
         return userData[0]
     }
 })
+
+export const UpdateUserToken = mutation({
+    args: {
+        id: v.id('users'),
+        credits: v.number()
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.patch(args.id, {
+            credits: args.credits
+        })
+    }
+})
+
+export const UpgradeToPro = mutation({
+    args: {
+        id: v.id("users"),
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.patch(args.id, {
+            credits: 5000,
+            subscriptionId: "razorpay_test",
+        });
+    },
+});

@@ -1,4 +1,3 @@
-// convex/schema.ts
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
@@ -10,11 +9,13 @@ export default defineSchema({
     subscriptionId: v.optional(v.string()),
   }),
 
-   DiscussionRoom: defineTable({
+  DiscussionRoom: defineTable({
     coachingOption: v.string(),
     topic: v.string(),
     expertName: v.string(),
     createdAt: v.number(),
-    avatar: v.optional(v.string()),
+    conversation: v.optional(v.array(v.any())),
+    summery: v.optional(v.any()),
+    uid: v.optional(v.id('users'))
   }),
 });

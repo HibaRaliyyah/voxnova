@@ -6,26 +6,26 @@ import React, { useEffect, useState } from 'react'
 import { UserContext } from './_context/UserContext';
 
 const AuthProvider = ({ children }) => {
-    const user = useUser();
-    const CreateUser = useMutation(api.users.CreateUser);
-    const [userData, setUserData] = useState();
+  const user = useUser();
+  const CreateUser = useMutation(api.users.CreateUser);
+  const [userData, setUserData] = useState();
 
-    useEffect(() => {
-        user&&CreateNewUser();
-    }, [user])
+  useEffect(() => {
+    user && CreateNewUser();
+  }, [user])
 
-    const CreateNewUser = async() => {
-      const result = await CreateUser({
-        name:user?.displayName,
-        email:user.primaryEmail
-      });
-      setUserData(result);
-    }
+  const CreateNewUser = async () => {
+    const result = await CreateUser({
+      name: user?.displayName,
+      email: user.primaryEmail
+    });
+    setUserData(result);
+  }
 
   return (
     <div>
-      <UserContext.Provider value={{userData, setUserData}}>
-        { children }
+      <UserContext.Provider value={{ userData, setUserData }}>
+        {children}
       </UserContext.Provider>
     </div>
   )

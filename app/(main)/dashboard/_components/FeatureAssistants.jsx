@@ -6,6 +6,7 @@ import { useUser } from "@stackframe/stack";
 import Image from "next/image";
 import React from "react";
 import UserInputDialog from "./UserInputDialog";
+import ProfileDialog from "./ProfileDialog";
 
 const FeatureAssistants = () => {
   const user = useUser();
@@ -18,7 +19,9 @@ const FeatureAssistants = () => {
             Welcome back, {user?.displayName}
           </h2>
         </div>
-        <Button className='cursor-pointer'>Profile</Button>
+        <ProfileDialog>
+          <Button className='cursor-pointer'>Profile</Button>
+        </ProfileDialog>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-5 xl:grid-cols-5 gap-10 mt-10">
@@ -26,28 +29,24 @@ const FeatureAssistants = () => {
           <BlurFade
             key={option.icon}
             delay={0.5 + index * 0.5}
-            // duration={0.6}
-            // yOffset={20}
-            // blur="8px"
-            // scale={0.95}
             inView
           >
             <div
               key={index}
               className="p-3 bg-secondary rounded-3xl flex flex-col justify-center items-center"
             >
-            <UserInputDialog coachingOption={option}>
-            <div key={index} className="flex flex-col justify-center items-center">
-              <Image
-                src={option.icon}
-                alt={option.name}
-                width={150}
-                height={150}
-                className="h-[70px] w-[70px] hover:rotate-12 cursor-pointer transition-all"
-              />
-              <h2 className="mt-2">{option.name}</h2>
-            </div>
-            </UserInputDialog>
+              <UserInputDialog coachingOption={option}>
+                <div key={index} className="flex flex-col justify-center items-center">
+                  <Image
+                    src={option.icon}
+                    alt={option.name}
+                    width={150}
+                    height={150}
+                    className="h-[70px] w-[70px] hover:rotate-12 cursor-pointer transition-all"
+                  />
+                  <h2 className="mt-2">{option.name}</h2>
+                </div>
+              </UserInputDialog>
             </div>
           </BlurFade>
         ))}

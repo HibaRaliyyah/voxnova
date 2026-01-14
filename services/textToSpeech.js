@@ -1,4 +1,3 @@
-// services/textToSpeech.js
 import { PollyClient, SynthesizeSpeechCommand } from "@aws-sdk/client-polly";
 
 export async function synthesizeSpeechBuffer(text, voiceId = "Joanna") {
