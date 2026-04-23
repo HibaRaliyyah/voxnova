@@ -1,4 +1,7 @@
 # VoxNova AI Voice Agent for Education
+<img width="1358" height="610" alt="voxnova" src="https://github.com/user-attachments/assets/97c217d1-6249-4795-a2b6-32a449bb803e" />
+## Link
+https://voxnova-three.vercel.app/
 
 ## Overview
 The VoxNova AI Voice Agent for Education is an innovative project designed to enhance the educational experience using advanced voice recognition and processing technologies. This project aims to provide interactive and engaging learning tools that make education more accessible and enjoyable for students and educators alike.
@@ -14,8 +17,8 @@ The VoxNova AI Voice Agent for Education is an innovative project designed to en
 - **Frontend:** React.js for building interactive user interfaces.
 - **Backend:** Node.js and Express.js to handle server-side logic and API interactions.
 - **Database:** MongoDB for storing user data and educational content.
-- **Voice Recognition:** Utilizes Google Cloud Speech-to-Text and other AI models for voice processing.
-- **Hosting:** Deployed on AWS for scalability and reliability.
+- **Voice Recognition:** Utilizes Amazon Polly Speech-to-Text and other AI models for voice processing.
+- **Hosting:** Deployed on Vercel for scalability and reliability.
 
 ## Installation Instructions
 1. Clone the repository:
@@ -30,8 +33,19 @@ The VoxNova AI Voice Agent for Education is an innovative project designed to en
 3. Set up environment variables:
    Create a `.env` file in the root directory and add the following:
    ```
-   MONGODB_URI=your_mongodb_uri
-   GOOGLE_CLOUD_API_KEY=your_google_cloud_api_key
+   NEXT_PUBLIC_STACK_PROJECT_ID
+   NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY
+   STACK_SECRET_SERVER_KEY
+   DEEPGRAM_API_KEY
+   GROQ_API_KEY
+   CONVEX_DEPLOYMENT
+   NEXT_PUBLIC_CONVEX_URL
+   AWS_ACCESS_KEY_ID
+   AWS_SECRET_ACCESS_KEY
+   AWS_REGION
+   NEXT_PUBLIC_RAZORPAY_KEY_ID
+   RAZORPAY_KEY_SECRET
+
    ```
 4. Start the application:
    ```bash
