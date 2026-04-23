@@ -1,5 +1,6 @@
 # VoxNova AI Voice Agent for Education
 <img width="1358" height="610" alt="voxnova" src="https://github.com/user-attachments/assets/97c217d1-6249-4795-a2b6-32a449bb803e" />
+
 ## Link
 https://voxnova-three.vercel.app/
 
@@ -30,32 +31,9 @@ The VoxNova AI Voice Agent for Education is an innovative project designed to en
    ```bash
    npm install
    ```
-3. Set up environment variables:
-   Create a `.env` file in the root directory and add the following:
    ```
-   NEXT_PUBLIC_STACK_PROJECT_ID
-   NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY
-   STACK_SECRET_SERVER_KEY
-   DEEPGRAM_API_KEY
-   GROQ_API_KEY
-   CONVEX_DEPLOYMENT
-   NEXT_PUBLIC_CONVEX_URL
-   AWS_ACCESS_KEY_ID
-   AWS_SECRET_ACCESS_KEY
-   AWS_REGION
-   NEXT_PUBLIC_RAZORPAY_KEY_ID
-   RAZORPAY_KEY_SECRET
-
-   ```
-4. Start the application:
+3. Start the application:
    ```bash
    npm start
    ```
-5. Open your browser and navigate to `http://localhost:3000` to access the application.
-
-## API Integrations
-- **Google Classroom API:** To manage classroom resources and assignments.
-- **Zoom API:** For integrating online classes and meetings.
-- **Moodle API:** Allows the integration with the Moodle learning management system.
-
-For any further information or support, please refer to the project's Wiki or contact the maintainers.
+4. Open your browser and navigate to `http://localhost:3000` to access the application.
