@@ -31,7 +31,6 @@ The VoxNova AI Voice Agent for Education is an innovative project designed to en
    ```bash
    npm install
    ```
-   ```
 3. Start the application:
    ```bash
    npm start
