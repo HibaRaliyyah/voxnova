@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS=\"-r newrelic\" next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "cross-env NODE_OPTIONS=\"-r newrelic\" next start"
   },
   "dependencies": {
     "@aws-sdk/client-polly": "^3.958.0",
